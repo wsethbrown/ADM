@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$navbar-color: #457b9d;
+$background-color: #f1faee;
+$card-header-background-color: #a8dadc;
+$title-color: #e63946;
+$login-color: #f1faee;
+$border-color: #457b9d;
+$font: 'Ubuntu', sans-serif;
+$p-color: #457b9d;
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $background-color;
+    font-family: $font;
+}
+
+.navbar {
+    background-color: $navbar-color !important;
+}
+
+#loginButton {
+    color:$login-color;
+}
+
+.modal-header {
+    background-color: $card-header-background-color;
+}
+
+.modal-title {
+    color: $title-color;
+    size: 2em;
+}
+
+.card {
+    margin-top: 2em;
+}
+
+.card-header {
+    background-color: $card-header-background-color;
+    color: $title-color;
+    text-align: center;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.flex-buttons {
+    justify-content: flex-end;
+    padding-top: 1.2em;
+}
+
+#about {
+    margin-top: 4rem;
+}
+
+h1 {
+    color: $title-color;
+    font-weight: bold;
+    font-size: 3.5em;
+}
+
+p {
+    color: $p-color;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+img {
+    width: 30%;
+    height: auto;
+}

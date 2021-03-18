@@ -7,27 +7,150 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Auto Dungeon Master</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-5g" href="#">ADM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ADM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarToggler">
-                <div class="navbar-nav ms-auto me-5">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#campaigns">Saved Campaigns</a>
-                    <a class="nav-link" href="#login">Login</a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link navbar-text active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link navbar-text" href="#campaigns">Saved Campaigns</a>
+                    <span class="navbar-text nav-link">
+                        <a role="button" id="loginButton">
+                            <span class="fa fa-sign-in"></span> Login
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button class="close" type="button" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="loginEmail" class="sr-only">Email Address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter Email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="loginPassword" class="sr-only">Password</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check input">
+                                        <label for="" class="form-check-label">Remember Me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button class="btn btn-secondary btn-sm ml-auto" type="button" data-dismiss="modal">Cancel</button>
+                                <button class="btn btn-primary btn-sm ml-1" type="submit">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- GENERATE NEW CAMPAIGN CARD -->
+    <div class="row mt-5">
+        <div class=" col-sm-12 col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Generate Campaign</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row form-group">
+                            <label for="" class="col col-md-6 col-form-label">Campaign Size</label>
+                            <div class="col-md-6">
+                                <select name="campaignSize" id="campaignSize" class="form-control form-control-sm">
+                                    <option value="">Select...</option>
+                                    <option value="">Epic</option>
+                                    <option value="">Medium</option>
+                                    <option value="">Small</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="" class="col col-md-6 col-form-label">Number of Players</label>
+                            <div class="col-md-6">
+                                <select name="partySize" id="partySize" class="form-control form-control-sm">
+                                    <option value="">Select...</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="" class="col-md-6 col-form-label">Starting Level</label>
+                            <div class="col-md-6">
+                                <input type="number" min="1" max="20" placeholder="Select 1-20" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col flex-buttons d-flex">
+                                <button class="btn btn-danger">Reset</button>
+                                <button class="btn btn-success ms-2">Generate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="row container-fluid mx-auto" id="about">
+        <div class="row ">
+            <div class="col-sm-12 col-md-6">
+                <h1>The Auto Dungeon Master takes all the prep work off your shoulders</h1>
+                <p>Create intricate campaigns with fully realized NPCs, cities and towns, and plotlines with one click.</p>
+                <p>Whether you need an entire campaign or a fully fleshed-out adventure, ADM will fit your needs.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <img class="ms-5" src="img/d20Red.png" alt="Red Dice">
+            </div>
+        </div>
+    </div>
+
+    <div class="row container-fluid text-box" id="customize">
+        <div class="row pt-2">
+            <div class="col-sm-12 col-md-6 ms-auto">
+                <h1>Fully customizable, edit anything to fit your needs!</h1>
+                <p>Change the name of an NPC, edit their appearance, or modify their background.</p>
+                <p>Drag and drop plotlines into an order that fits <strong>your</strong> party's needs!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
