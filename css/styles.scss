@@ -21,6 +21,9 @@ body {
 
 .navbar {
     background-color: $navbar-color !important;
+    .navbar-brand {
+        size: 2em;
+    }
 }
 
 #loginButton {
@@ -64,15 +67,19 @@ h1 {
     color: $title-color;
     font-weight: bold;
     font-size: 3.5em;
-}
-
-p {
-    color: $p-color;
-    font-size: 1.2em;
     text-align: center;
 }
 
+.list-group-item {
+    color: $p-color;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 1em;
+    background-color: $background-color;
+}
+
 img {
-    width: 30%;
+    width: 50%;
     height: auto;
+    padding-left: 20%;
 }

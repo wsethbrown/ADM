@@ -10,6 +10,8 @@ body {
 
 .navbar {
   background-color: #457b9d !important; }
+  .navbar .navbar-brand {
+    size: 2em; }
 
 #loginButton {
   color: #f1faee; }
@@ -43,13 +45,17 @@ body {
 h1 {
   color: #e63946;
   font-weight: bold;
-  font-size: 3.5em; }
-
-p {
-  color: #457b9d;
-  font-size: 1.2em;
+  font-size: 3.5em;
   text-align: center; }
 
+.list-group-item {
+  color: #457b9d;
+  font-size: 1.4em;
+  text-align: center;
+  padding: 1em;
+  background-color: #f1faee; }
+
 img {
-  width: 30%;
-  height: auto; }
+  width: 50%;
+  height: auto;
+  padding-left: 20%; }
