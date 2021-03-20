@@ -22,7 +22,7 @@ body {
 .navbar {
     background-color: $navbar-color !important;
     .navbar-brand {
-        size: 2em;
+        font-size: 1.5em;
     }
 }
 
@@ -32,6 +32,13 @@ body {
 
 .modal-header {
     background-color: $navbar-color;
+}
+
+.close {
+    background: transparent;
+    color: $login-color;
+    font-size: 2em;
+    border: none;
 }
 
 .modal-title {

@@ -11,13 +11,19 @@ body {
 .navbar {
   background-color: #457b9d !important; }
   .navbar .navbar-brand {
-    size: 2em; }
+    font-size: 1.5em; }
 
 #loginButton {
   color: #f1faee; }
 
 .modal-header {
   background-color: #457b9d; }
+
+.close {
+  background: transparent;
+  color: #f1faee;
+  font-size: 2em;
+  border: none; }
 
 .modal-title {
   color: #f1faee;
